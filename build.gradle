@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.parag.movie'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.32.Final'
+	implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.32.Final'
+	implementation group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+	implementation group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.0.Final'
+	runtimeOnly group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+}
+
+test {
+	useJUnitPlatform()
+}
